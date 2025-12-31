@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System - Genres</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* Header (copied from index.html) */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #333;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .logo { max-width: 60px; height: auto; }
+    .library-name { margin-left: 10px; color: #fff; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav a { color: #fff; text-decoration: none; }
+    nav form { margin-left: 20px; }
+    nav input { padding: 5px; }
+
+    /* Genre Section */
+    main { padding: 40px 20px; }
+    .genre-section { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .genre-section h2 { font-size: 2rem; margin-bottom: 16px; color: #333; }
+    .view-all {
+      padding: 10px 18px; margin-bottom: 28px; background: #333; color: #fff;
+      border: none; border-radius: 6px; cursor: pointer;
+    }
+    .view-all:hover { background: #444; }
+    .card-container {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .card {
+      background: #f9f9f9; border: 1px solid #eee; border-radius: 10px;
+      padding: 20px; text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .card img { max-width: 80px; height: auto; margin-bottom: 10px; }
+    .card h3 a { text-decoration: none; color: #333; }
+
+    /* Footer (copied from index.html) */
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+    .quick-links ul { list-style: none; }
+    .quick-links li { margin: 5px 0; }
+    .quick-links a {color: #fff; text-decoration: none;}
+    .social-icons a { color: #fff; margin-right: 10px; font-size: 1.2rem; }
+
+    /* Responsive Media Queries (same as index.html) */
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; text-align: center; }
+      nav ul { flex-direction: column; gap: 10px; }
+      .genre-section h2 { font-size: 1.6rem; }
+      .footer-container { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      nav ul { gap: 5px; }
+      .genre-section h2 { font-size: 1.4rem; }
+      .card img { max-width: 60px; }
+      .card h3 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="Images/book_logo.jpg" class="logo" alt="Library Logo">
+        <h2 class="library-name">E-Library</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html" aria-current="page">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="logout-btn">Logout</a></li>
+        </ul>
+        <form>
+          <input type="search" placeholder="Search Books...">
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="genre-section">
+      <h2>Books By Genre</h2>
+      <button class="view-all">View All</button>
+
+      <div class="card-container">
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135810.png" alt="Fiction"><h3><a href="fiction.html">Fiction</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/2285/2285562.png" alt="Non-Fiction"><h3><a href="non-fiction.html">Non-Fiction</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" alt="Classics"><h3><a href="classic.html">Classics</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3845/3845828.png" alt="Humour"><h3><a href="humour.html">Humour</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3233/3233481.png" alt="Science"><h3><a href="science.html">Science & Technology</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/2092/2092949.png" alt="Comics"><h3><a href="comics.html">Comics</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Historical"><h3><a href="historic.html">Historical</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3082/3082031.png" alt="Adventure"><h3><a href="adventure.html">Adventure & Mystery</a></h3></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Biography"><h3><a href="biography.html">Biography, Autobiography & Memoir</a></h3></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="quick-links">
+        <p>Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <h4>Follow us on</h4>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a  href="#" class="fa fa-instagram"></a>
+        <p>&copy; 2025 All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System - Fiction</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ✅ Header identical to index.html */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #333;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .logo { max-width: 60px; height: auto; }
+    .library-name { margin-left: 10px; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav a { color: #fff; text-decoration: none; }
+
+    nav form { margin-left: 20px; }
+    nav input[type="search"] {
+      padding: 5px;
+      font-size: 0.85rem;
+      width: 140px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    nav button {
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      margin-left: 5px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    nav button:hover { background: #555; }
+
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; text-align: center; }
+      nav ul { flex-direction: column; gap: 10px; }
+      nav input[type="search"] { width: 120px; font-size: 0.8rem; }
+      nav button { padding: 3px 6px; font-size: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      nav input[type="search"] { width: 100px; font-size: 0.75rem; }
+      nav button { padding: 2px 5px; font-size: 0.75rem; }
+    }
+
+    /* Fiction section */
+    .popular-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .section-header h2 { font-size: 1.8rem; }
+    .view-all {
+      padding: 8px 12px;
+      background: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .view-all:hover { background: #004c99; }
+
+    .book-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .book-card {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .book-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .book-card h3 { margin: 10px 0; }
+    .book-card a {color: #fff;}
+    .rating { margin-top: 10px; }
+    .rating .stars { color: gold; }
+    .book-card button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .book-card button:hover { background: #555; }
+
+    /* Footer */
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+    .quick-links ul { list-style: none; }
+    .quick-links li { margin: 5px 0; }
+    .quick-links a {color:#fff; text-decoration: none;}
+    .social-icons a { color: #fff; margin-right: 10px; font-size: 1.2rem; }
+    @media (max-width: 768px) { .footer-container { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <!-- ✅ Header copied from index.html -->
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="Images/book_logo.jpg" class="logo" alt="Library Logo">
+        <h2 class="library-name">E-Library</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="logout-btn">Logout</a></li>
+        </ul>
+        <form>
+          <input type="search" placeholder="Search Books...">
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fiction Section -->
+  <main>
+    <section class="popular-section">
+      <div class="section-header">
+        <h2>Biography & Autobiography</h2>
+        <button class="view-all">View All</button>
+      </div>
+
+      <div class="book-container">
+         
+ 
+  <!-- Book 1 -->
+      <div class="book-card">
+        <img src="Images/bio1.jpg">
+        <h3>Dr Vikram Ambalal Sarabhai </h3>
+        <p>Author : S. K. Agrawal</p>
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="score">5.0</span><br><br><br><br><br><br>
+<button type="submit"><a href="register.html">Read</a></button>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <img src="Images/bio2.jpg">
+        <h3>Sri Ramanujacharya</h3>
+        <p>Author : D. K. Hari and D. K. Hema Giri</p>
+        <div class="rating">
+          <span class="stars">★★☆☆☆</span>
+          <span class="score">5.0</span><br><br>
+<button type="submit"><a href="register.html">Read</a></button>
+        </div>
+      </div>
+
+    </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="quick-links">
+        <p>Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <h4>Follow us on</h4>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <p>&copy; 2025 All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

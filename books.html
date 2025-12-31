@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System - Popular Books</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* Header (same style as index.html) */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #333;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .logo { max-width: 60px; height: auto; }
+    .library-name { margin-left: 10px; color: #fff; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav a { color: #fff; text-decoration: none; }
+    nav form { margin-left: 20px; }
+    nav input { padding: 5px; }
+    nav button {
+      padding: 6px 12px; border: none; border-radius: 4px;
+      background: #555; color: #fff; cursor: pointer;
+    }
+    nav button:hover { background: #666; }
+
+    /* Popular Books Section */
+    main { padding: 40px 20px; }
+    .popular-section { max-width: 1100px; margin: 0 auto; }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 20px;
+    }
+    .section-header h2 { font-size: 2rem; color: #333; }
+    .view-all {
+      padding: 10px 18px; background: #333; color: #fff;
+      border: none; border-radius: 6px; cursor: pointer;
+    }
+    .view-all:hover { background: #444; }
+
+    .book-container {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .book-card {
+      background: #f9f9f9; border: 1px solid #eee; border-radius: 10px;
+      padding: 15px; text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .book-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .book-card img { max-width: 100%; height: auto; border-radius: 6px; margin-bottom: 10px; }
+    .book-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .book-card p { font-size: 0.95rem; margin-bottom: 8px; }
+    .book-card a {color:#fff ;}
+    .rating { font-size: 0.9rem; }
+    .rating .stars { color: #f39c12; }
+    .book-card button {
+      margin-top: 8px; padding: 6px 12px; border: none; border-radius: 4px;
+      background: #333; color: #fff; cursor: pointer;
+    }
+    .book-card button:hover { background: #444; }
+    /* Footer (same style as index.html) */
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+    .quick-links ul { list-style: none; }
+    .quick-links li { margin: 5px 0; }
+    .quick-links a {color:#fff ;text-decoration: none;}
+    .social-icons a { color: #fff; margin-right: 10px; font-size: 1.2rem; }
+
+    /* Responsive Media Queries (same behavior as index.html) */
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; text-align: center; }
+      nav ul { flex-direction: column; gap: 10px; }
+      .section-header { flex-direction: column; gap: 10px; }
+      .section-header h2 { font-size: 1.6rem; }
+      .footer-container { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      nav ul { gap: 5px; }
+      .section-header h2 { font-size: 1.4rem; }
+      .book-card h3 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="Images/book_logo.jpg" class="logo" alt="Library Logo">
+        <h2 class="library-name">E-Library</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html" aria-current="page">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="logout-btn">Logout</a></li>
+        </ul>
+        <form>
+          <input type="search" placeholder="Search Books...">
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Popular Books Section -->
+    <section class="popular-section">
+      <div class="section-header">
+        <h2>Popular Books</h2>
+        <button class="view-all" type="button">View All</button>
+      </div>
+
+      <div class="book-container">
+        <!-- 1–23 Book Cards -->
+        <div class="book-card"><img src="Images/fiction1.jpg" alt="Jagavegla Kirtankar"><h3>Jagavegla Kirtankar</h3><p>Author : Baban Shinde</p><div class="rating"><span class="stars">★★★★★</span> <span class="score">5.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/fiction2.jpg" alt="Sapno Ki Udaan"><h3>Sapno Ki Udaan</h3><p>Author : NCERT</p><div class="rating"><span class="stars">★★☆☆☆</span> <span class="score">0.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/fiction3.jpg" alt="Golden Valley"><h3>Golden Valley</h3><p>Author : Manoj Das</p><div class="rating"><span class="stars">★★★★☆</span> <span class="score">4.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/fiction4.jpg" alt="The Fourth Friend"><h3>The Fourth Friend</h3><p>Author : Manoj Das</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/non-fiction.jpg" alt="A Primer On Yoga"><h3>A Primer On Yoga</h3><p>Author : NBT</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/non-fiction1.jpg" alt="Captain Manoj Kumar Pandey"><h3>Captain Manoj Kumar Pandey</h3><p>Author : Ramendra Kumar</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/non-fiction2.jpg" alt="India & World Cricket"><h3>India & World Cricket</h3><p>Author : Suryaprakash Chaturvedi</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/non-fiction3.jpg" alt="Playing Together"><h3>Playing Together</h3><p>Author : Bharat Bhushan Aggrawal</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/classic1.jpg" alt="Stories For Children"><h3>Stories For Children</h3><p>Author : Munshi Premchand</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/classic2.jpg" alt="Wind In The Willows"><h3>Wind In The Willows</h3><p>Author : Kenneth Grahame</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/classic3.jpg" alt="The Velveteen Rabbit"><h3>The Velveteen Rabbit</h3><p>Author : Margery Williams</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/comics1.jpg" alt="Mann Ki Baat"><h3>Mann Ki Baat</h3><p>Author : Sharad Mohan</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/comics3.jpg" alt="The Naval Journey Of India"><h3>The Naval Journey Of India</h3><p>Author : Amar Chitra Katha</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        
+        <div class="book-card"><img src="Images/humour1.jpg" alt="The Inimitable Jeeves"><h3>The Inimitable Jeeves</h3><p>Author : P. G. Wodehouse</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/humour2.jpg" alt="Carry On, Jeeves"><h3>Carry On Jeeves</h3><p>Author : P. G. Wodehouse</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/science1.jpg" alt="What is Space"><h3>What is Space</h3><p>Author : Unbound Script</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/science2.jpg" alt="Chemical Tricks"><h3>Chemical Tricks</h3><p>Author : A. Andreson</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/historic1.jpg" alt="Women In Power"><h3>Women In Power</h3><p>Author : Amar Chitra Katha</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/historic2.jpg" alt="Stories from Bapu's Life"><h3>Stories from Bapu's Life</h3><p>Author : Uma Shankar Joshi</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/adventure1.jpg" alt="The Seven Dials of Mystery"><h3>The Seven Dials Of Mystery</h3><p>Author : Agatha Christie</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/adventure2.jpg" alt="The Secret of Chimneys"><h3>The Secret Of Chimneys</h3><p>Author : Agatha Christie</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+
+        <div class="book-card"><img src="Images/bio1.jpg" alt="Dr. Vikram Ambalal Sarabhai"><h3>Dr. Vikram Ambalal Sarabhai</h3><p>Author : S. K. Agrawal</p><div class="rating"><span class="stars">★★★☆☆</span> <span class="score">3.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+        <div class="book-card"><img src="Images/bio2.jpg" alt="Sri Ramanujacharya"><h3>Sri Ramanujacharya</h3><p>Author : D. K. Hari & D. K. Hema Giri</p><div class="rating"><span class="stars">★★★★★</span> <span class="score">5.0</span><br><button type="button"><a href="register.html">Read</a></button></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="quick-links">
+        <p>Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <h4>Follow us on</h4>
+        <a href="#" class="fa fa-facebook" aria-label="Facebook"></a>
+        <a href="#" class="fa fa-twitter" aria-label="Twitter"></a>
+        <a href="#" class="fa fa-instagram" aria-label="Instagram"></a>
+        <p>&copy; 2025 All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

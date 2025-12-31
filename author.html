@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System - Authors</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* Header (same as index.html) */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #333;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .logo { max-width: 60px; height: auto; }
+    .library-name { margin-left: 10px; color: #fff; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav a { color: #fff; text-decoration: none; }
+    nav form { margin-left: 20px; }
+    nav input { padding: 5px; }
+    nav button {
+      padding: 6px 12px; border: none; border-radius: 4px;
+      background: #555; color: #fff; cursor: pointer;
+    }
+    nav button:hover { background: #666; }
+
+    /* Authors Section */
+    main { padding: 40px 20px; }
+    .author-section { max-width: 1100px; margin: 0 auto; }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 20px;
+    }
+    .section-header h2 { font-size: 2rem; color: #333; }
+    .view-all {
+      padding: 10px 18px; background: #333; color: #fff;
+      border: none; border-radius: 6px; cursor: pointer;
+    }
+    .view-all:hover { background: #444; }
+
+    .author-container {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .author-card {
+      background: #f9f9f9; border: 1px solid #eee; border-radius: 10px;
+      padding: 15px; text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .author-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .author-card img {
+      width: 100px; height: 100px; object-fit: cover;
+      border-radius: 50%; margin-bottom: 10px; background: #ddd;
+    }
+    .author-card h3 { font-size: 1.1rem; margin-bottom: 6px; color: #222; }
+    .author-card p { font-size: 0.95rem; margin-bottom: 8px; color: #444; }
+
+    /* Footer (same as index.html) */
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+    .quick-links ul { list-style: none; }
+    .quick-links li { margin: 5px 0; }
+    .social-icons a { color: #fff; margin-right: 10px; font-size: 1.2rem; }
+
+    /* Responsive (same behavior as index.html) */
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; text-align: center; }
+      nav ul { flex-direction: column; gap: 10px; }
+      .section-header { flex-direction: column; gap: 10px; }
+      .section-header h2 { font-size: 1.6rem; }
+      .footer-container { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      nav ul { gap: 5px; }
+      .section-header h2 { font-size: 1.4rem; }
+      .author-card h3 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="Images/book_logo.jpg" class="logo" alt="Library Logo">
+        <h2 class="library-name">E-Library</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html" aria-current="page">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="logout-btn">Logout</a></li>
+        </ul>
+        <form>
+          <input type="search" placeholder="Search Authors...">
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="author-section">
+      <div class="section-header">
+        <h2>Authors</h2>
+        <button class="view-all" type="button">View All</button>
+      </div>
+
+      <div class="author-container">
+        <!-- Authors from your books and genres -->
+        <div class="author-card"><img src="Images/author1.jpg" alt="Munshi Premchand"><h3>Munshi Premchand</h3><p>Renowned Hindi-Urdu writer known for realistic fiction.</p></div>
+        <div class="author-card"><img src="Images/author4.jpg" alt="Agatha Christie"><h3>Agatha Christie</h3><p>Iconic mystery novelist; creator of Hercule Poirot and Miss Marple.</p></div>
+        <div class="author-card"><img src="Images/author2.jpg" alt="P. G. Wodehouse"><h3>P. G. Wodehouse</h3><p>Master of comic fiction; celebrated for the Jeeves series.</p></div>
+        <div class="author-card"><img src="Images/author11.jpg" alt="Manoj Das"><h3>Manoj Das</h3><p>Indian author in Odia and English; noted for short stories and novels.</p></div>
+        <div class="author-card"><img src="Images/author6.jpg" alt="Kenneth Grahame"><h3>Kenneth Grahame</h3><p>Author of the classic “The Wind in the Willows”.</p></div>
+        <div class="author-card"><img src="Images/author12.jpg" alt="Margery Williams"><h3>Margery Williams</h3><p>Best known for “The Velveteen Rabbit”.</p></div>
+        <div class="author-card"><img src="Images/ncert.jpg" alt="NCERT"><h3>NCERT</h3><p>National Council of Educational Research and Training; educational publications.</p></div>
+        <div class="author-card"><img src="Images/nbt.jpg" alt="NBT"><h3>NBT</h3><p>National Book Trust; publisher of “A Primer On Yoga”.</p></div>
+        <div class="author-card"><img src="Images/author13.jpg" alt="Ramendra Kumar"><h3>Ramendra Kumar</h3><p>Author of “Captain Manoj Kumar Pandey”.</p></div>
+        <div class="author-card"><img src="Images/author5.jpg" alt="Suryaprakash Chaturvedi"><h3>Suryaprakash Chaturvedi</h3><p>Author of “India & World Cricket”.</p></div>
+        <div class="author-card"><img src="Images/author7.jpg" alt="Bharat Bhushan Aggrawal"><h3>Bharat Bhushan Aggrawal</h3><p>Author of “Playing Together”.</p></div>
+        <div class="author-card"><img src="Images/author15.jpg" alt="Amar Chitra Katha"><h3>Amar Chitra Katha</h3><p>Indian comics bringing history and mythology to readers.</p></div>
+        <div class="author-card"><img src="Images/author14.jpg" alt="Unbound Script"><h3>Unbound Script</h3><p>Author of “What is Space”.</p></div>
+        <div class="author-card"><img src="Images/science2.jpg" alt="A. Andreson"><h3>A. Andreson</h3><p>Author of “How to do Chemical Tricks”.</p></div>
+        <div class="author-card"><img src="Images/author3.jpg" alt="Uma Shankar Joshi"><h3>Uma Shankar Joshi</h3><p>Author of “Stories from Bapu’s Life”.</p></div>
+        <div class="author-card"><img src="Images/author14.jpg" alt="S. K. Agrawal"><h3>S. K. Agrawal</h3><p>Author of “Dr. Vikram Ambalal Sarabhai”.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="quick-links">
+        <p>Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <h4>Follow us on</h4>
+        <a href="#" class="fa fa-facebook" aria-label="Facebook"></a>
+        <a href="#" class="fa fa-twitter" aria-label="Twitter"></a>
+        <a href="#" class="fa fa-instagram" aria-label="Instagram"></a>
+        <p>&copy; 2025 All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

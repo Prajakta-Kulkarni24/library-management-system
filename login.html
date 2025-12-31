@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System - Login</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ✅ Header identical to index.html */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #333;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .logo { max-width: 60px; height: auto; }
+    .library-name { margin-left: 10px; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav a { color: #fff; text-decoration: none; }
+
+    nav form { margin-left: 20px; }
+    nav input[type="search"] {
+      padding: 5px;
+      font-size: 0.85rem;
+      width: 140px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    nav button {
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      margin-left: 5px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    nav button:hover { background: #555; }
+
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; text-align: center; }
+      nav ul { flex-direction: column; gap: 10px; }
+      nav input[type="search"] { width: 120px; font-size: 0.8rem; }
+      nav button { padding: 3px 6px; font-size: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      nav input[type="search"] { width: 100px; font-size: 0.75rem; }
+      nav button { padding: 2px 5px; font-size: 0.75rem; }
+    }
+
+    /* Login card */
+    .main {
+      max-width: 400px;
+      margin: 60px auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .main h2 { text-align: center; margin-bottom: 10px; }
+    .main h3 { text-align: center; margin-bottom: 20px; }
+
+    form label { display: block; margin-top: 10px; }
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .main form button[type="submit"] {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .main form button[type="submit"]:hover { background: #004c99; }
+
+    .signup { text-align: center; margin-top: 15px; }
+
+    /* Footer */
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+    .quick-links ul { list-style: none; }
+    .quick-links li { margin: 5px 0; }
+    .social-icons a { color: #fff; margin-right: 10px; font-size: 1.2rem; }
+    @media (max-width: 768px) { .footer-container { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <!-- ✅ Header copied from index.html -->
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="Images/book_logo.jpg" class="logo" alt="Library Logo">
+        <h2 class="library-name">E-Library</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="logout-btn">Logout</a></li>
+        </ul>
+        <form>
+          <input type="search" placeholder="Search Books...">
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Form -->
+  <main>
+    <div class="main">
+      <h2>Login</h2>
+      <h3>Enter your login credentials</h3>
+      <form action="/login" method="POST" onsubmit="return login();">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your Username" required/>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your Password" required/>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="signup">
+        <p>Not registered? <a href="register.html">Create an account</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="quick-links">
+        <p>Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="genre.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="author.html">Authors</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <h4>Follow us on</h4>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <p>&copy; 2025 All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if (username && password) {
+        alert("Login Successful");
+        return true;
+      } else {
+        alert("Please fill in both fields");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
